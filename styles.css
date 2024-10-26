@@ -1,0 +1,397 @@
+/* Aplicando a fonte Poppins ao site */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Estilo padrão da navbar (no topo) */
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo da navbar quando a página for rolada */
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #1f51ff !important;
+}
+
+/* Estilo da seção hero */
+.hero {
+    height: 100vh;
+    background: url('assets/gif-fundo.gif') repeat center center;
+    background-size: cover;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    font-weight: 300;
+}
+
+/* Estilo do botão na seção hero */
+.hero-content .btn {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background-color: #1f51ff;
+    color: #000000;
+}
+
+/* Estilo do texto "Olá, seja bem-vindo!" */
+.welcome-text {
+    font-size: 1.5em;
+    color: #1f51ff; /* Escolha uma cor que combine com o tema */
+    margin-bottom: 0.5em;
+    font-weight: 300;
+}
+
+/* Estilo dos ícones sociais na seção Hero */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #FFFFFF; /* Cor dos ícones */
+    font-size: 1.8em; /* Tamanho dos ícones */
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #1f51ff ; /* Cor de hover */
+}
+
+/* Estilo da seção Sobre */
+.about-section {
+    padding: 50px 20px;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1f51ff;
+    font-weight: 600;
+}
+
+.about-text {
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.about-image {
+    padding-left: 30px;
+}
+
+.about-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 30px 15px;
+    }
+
+    .about-image img {
+        margin-top: 20px;
+        max-width: 80%;
+    }
+}
+
+/* Seção de Habilidades */
+.skills-section {
+    padding: 50px 20px;
+    background-color: #f0f0f5;
+    text-align: left;
+}
+
+.skills-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-section h3 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #1f51ff;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* Lista de habilidades */
+.skills-list {
+    margin-bottom: 20px;
+}
+
+/* Cada habilidade ocupa uma linha com ícones */
+.skill {
+    margin-bottom: 30px;
+    opacity: 0; /* Invisível até aparecer na tela */
+    transform: translateY(20px); /* Um leve deslocamento */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suave na entrada */
+}
+
+.skill h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f51ff;
+    display: flex;
+    align-items: center;
+}
+
+.skill h4 i {
+    margin-right: 10px;
+}
+
+/* Efeito quando as habilidades entram na tela */
+.skills-list .skill.show {
+    opacity: 1; /* Visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #1f51ff;
+    line-height: 25px;
+    height: 100%;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+    font-weight: 500;
+    transition: width 1s ease-in-out;
+}
+
+/* Animação suave para barras de progresso */
+@keyframes progress-animation {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.progress-bar {
+    animation: progress-animation 2s ease;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 30px 20px;
+    }
+
+    .progress {
+        height: 20px;
+    }
+
+    .progress-bar {
+        font-size: 0.9em;
+        line-height: 20px;
+    }
+
+    .skills-list {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para a Seção de Contato */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #F5F5F5;
+    color: #333;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #1f51ff;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info h3 {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.contact-info h4 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #1f51ff;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: #1f51ff;
+    font-size: 2em; /* Aumenta o tamanho dos ícones */
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #333;
+}
+
+#contact-form .form-control {
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+#contact-form .btn {
+    background-color: #1f51ff;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form .btn:hover {
+    background-color: #333;
+}
+
+/* Layout de colunas mais equilibrado */
+.contact-section .row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Espaçamento entre o formulário e as informações de contato para telas menores */
+@media (max-width: 768px) {
+    .contact-info {
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+}
+
+/* Seção de Projetos */
+.projects-section {
+    padding: 50px 20px;
+    background-color: #FFFFFF;
+    color: #333;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #1f51ff;
+    margin-bottom: 40px;
+}
+
+/* Estilos dos cards de projeto */
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    color: #1f51ff;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.project-card a {
+    color: #1f51ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #333;
+}
